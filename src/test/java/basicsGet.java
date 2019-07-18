@@ -5,9 +5,11 @@ import static org.hamcrest.Matchers.equalTo;
 
 import static io.restassured.RestAssured.given;
 
-public class basics {
+public class basicsGet {
 
-    public static void main(String[] args) {
+    @Test
+
+    public void Test() {
 
         // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&key=AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U
 
@@ -15,13 +17,14 @@ public class basics {
         RestAssured.baseURI = "https://maps.googleapis.com";
 
         RestAssured.given().//parameters, request headers, request cookies, body
-                param("location", "-33.8670522,151.1957362").
-                param("radius", "500").
-                param("key", "AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U").
+                queryParam("location", "-33.8670522,151.1957362").
+                queryParam("radius", "500").
+                queryParam("key", "AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U").
 
                 when().get("/maps/api/place/nearbysearch/json").//resourse is passed here
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
-                body("results[0].geometry.location.lat",equalTo("-33.8688197"));
+                body("results[0].name",equalTo("Sydney")).and().
+                body("results[0].place_id",equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM"));
                 /*header("edede,  frfrfrf").
                 cookie("deded, dedede").
                 body()*/
