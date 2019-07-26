@@ -6,7 +6,7 @@
     <test verbose="2" preserve-order="true" name="Chrome test cases">
         <classes>
 
-            <class name="basicsPost">
+            <class name="basicsPostDelete">
                 <!--<methods>
                     <include name="UsersSectionIsAvailableForAdmin"/>
                 </methods>-->
