@@ -15,4 +15,13 @@ public class payload {
 
         return requestBody;
     }
+
+    public static String getPlace_id(String place_id) {
+
+        String requestBody = ("{" +
+                "\"place_id\": \"" + place_id + "\"" +
+                "}");
+
+        return requestBody;
+    }
 }

@@ -1,3 +1,5 @@
+package Tests;
+
 import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -60,11 +62,9 @@ public class basicsPostDelete {
 
         //Place the "place_id" to delete request
         given().
-                queryParam("key", "qaclick123").
-                body("{" +
-                        "\"place_id\": \""+place_id+"\""+
-    "}").
-                when().post("/maps/api/place/delete/json").
+                queryParam("key", prop.getProperty("KEY")).
+                body(payload.getPlace_id(place_id)).
+                when().post(resources.placeDeleteData()).
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
                 body("status", equalTo("OK"));
 
