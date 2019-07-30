@@ -23,7 +23,7 @@ public class ParsingJsonToExctractValues {
         Response res = RestAssured.given().//parameters, request headers, request cookies, body
                 queryParam("location", "-33.8670522,151.1957362").
                 queryParam("radius", "500").
-                queryParam("key", "AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U").log().all().
+                queryParam("key", "AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U").log().all(). //Shows all queryParams logs
 
                 when().get("/maps/api/place/nearbysearch/json").//resourse is passed here
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
