@@ -13,4 +13,8 @@ public class resources {
         String res = "/maps/api/place/delete/json";
         return res;
     }
+
+
+
+
 }
