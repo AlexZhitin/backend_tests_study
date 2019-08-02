@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 
 public class basics8_jira {
 
-    private static String issue_id = ReusableMethods.getIssueID();
+    private static String issue_id = ReusableMethods.getIssueID(); //global static variable not to create extra issue
 
     Properties prop = new Properties();
     private static String propertiesPath = System.getProperty("user.dir") + "/src/test/java/files/env.properties";
