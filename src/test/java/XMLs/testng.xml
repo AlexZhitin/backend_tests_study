@@ -6,7 +6,7 @@
     <test verbose="2" preserve-order="true" name="Chrome test cases">
         <classes>
 
-            <class name="Tests.basicsPostDelete">
+            <class name="Tests.basics6_jira_Test">
                 <!--<methods>
                     <include name="UsersSectionIsAvailableForAdmin"/>
                 </methods>-->

@@ -14,7 +14,7 @@ import java.util.Properties;
 import static io.restassured.RestAssured.given;
 
 
-public class basics8_jira {
+public class basics8_jira_Test {
 
     private static String issue_id = ReusableMethods.getIssueID(); //global static variable not to create extra issue
 

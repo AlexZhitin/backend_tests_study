@@ -13,7 +13,7 @@ import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
 
-public class basics7_jira {
+public class basics7_jira_Test {
 
     Properties prop = new Properties();
     private static String propertiesPath = System.getProperty("user.dir") + "/src/test/java/files/env.properties";
