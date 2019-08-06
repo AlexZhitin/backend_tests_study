@@ -25,9 +25,13 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/XMLs/testng.xml</suiteXmlFile> <!--path to testng.xml file-->
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${XmlFile}</suiteXmlFile> <!--Command to run testng.xml file with maven
+                        mvn test -DXmlFile=/Users/Sasha/Documents/Selenium_projects/backend_tests_study/src/test/java/XMLs/testng.xml
+-->
                     </suiteXmlFiles>
                 </configuration>
+                <!--Command to run a single test (configuration part should be commented): mvn -Dtest=basics6_jira_Test test-->
             </plugin>
 
         </plugins>
