@@ -26,7 +26,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${XmlFile}</suiteXmlFile> <!--Command to run testng.xml file with maven
+                        <suiteXmlFile>/Users/Sasha/Documents/Selenium_projects/backend_tests_study/src/test/java/XMLs/testng.xml</suiteXmlFile> <!--Command to run testng.xml file with maven
                         mvn test -DXmlFile=/Users/Sasha/Documents/Selenium_projects/backend_tests_study/src/test/java/XMLs/testng.xml
 -->
                     </suiteXmlFiles>
