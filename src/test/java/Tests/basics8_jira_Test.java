@@ -54,12 +54,13 @@ public class basics8_jira_Test {
         RestAssured.baseURI = "http://localhost:8080";
         given().header("content-type", "application/json").
                 header("Cookie", "JSESSIONID=" + session_id).
+                pathParam("comment_id", comment_id).
                 body("{\"body\":\"Updated comment\", " +
                         "\"visibility\": {    " +
                         "\"type\": \"role\",    " +
                         "\"value\": \"Administrators\"  }}").
                 when().
-                put("/rest/api/2/issue/" + issue_id + "/comment/" + comment_id).
+                put("/rest/api/2/issue/" + issue_id + "/comment/{comment_id}"). //{comment_id} is a path parameter specified above
                 then().statusCode(200).extract().response();
 
     }
