@@ -27,7 +27,7 @@ public class basics7_jira_Test {
     @Test
     public void JiraAPI() {
 
-        //Creating comment.
+        //Creating comment
 
         String session_id = ReusableMethods.getSessionKey();
         RestAssured.baseURI = "http://localhost:8080";
