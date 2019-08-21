@@ -6,6 +6,8 @@ import io.restassured.http.ContentType;
 import io.restassured.internal.path.json.mapping.JsonObjectDeserializer;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import files.resources;
@@ -21,7 +23,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class basicsPostDelete {
-
+    private static Logger log = LogManager.getLogger(basicsPostDelete.class.getName());
     Properties prop = new Properties();
     private static String propertiesPath = System.getProperty("user.dir") + "/src/test/java/files/env.properties";
 
@@ -38,7 +40,7 @@ public class basicsPostDelete {
         //Grab the response
 
         // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&key=AIzaSyD8CTAbN0kl2a-mpJoVVk1j1drJg6N5g0U
-
+        log.info("Host information" + prop.getProperty("HOST"));
         RestAssured.baseURI = prop.getProperty("HOST");
 
         Response res = given().
@@ -54,6 +56,7 @@ public class basicsPostDelete {
 
         String responseString = res.asString();
         System.out.println(responseString);
+        log.info(responseString);
 
         JsonPath js = new JsonPath(responseString);
         String place_id = js.get("place_id"); //Had to add JsonObject dependency to make it work
