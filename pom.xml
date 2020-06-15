@@ -32,11 +32,19 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${XmlFile}</suiteXmlFile> <!--Command to run testng.xml file with maven
-                        mvn test -DXmlFile=/Users/Sasha/Documents/Selenium_projects/backend_tests_study/src/test/java/XMLs/testng.xml
+                        <suiteXmlFile>${XmlFile}</suiteXmlFile> <!--Command to run testng2.xml file with maven
+                        mvn test -DXmlFile=/Users/Sasha/Documents/Selenium_projects/backend_tests_study/src/test/java/XMLs/testng2.xml
 -->
                     </suiteXmlFiles>
                 </configuration>

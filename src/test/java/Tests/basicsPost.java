@@ -22,7 +22,15 @@ public class basicsPost {
 
        Response res = given().//parameters, request headers, request cookies, body
                 queryParam("key", "qaclick123").
-                body("{    \"location\":{\"lat\" : -38.383494,        \"lng\" : 33.427362    },    \"accuracy\":50,    \"name\":\"Frontline house\",    \"phone_number\":\"(+91) 983 893 3937\",    \"address\" : \"29, side layout, cohen 09\",    \"types\": [\"shoe park\",\"shop\"],    \"website\" : \"http://google.com\",    \"language\" : \"French-IN\"}").
+                body("{    \"location\":{\"lat\" : -38.383494,        " +
+                        "\"lng\" : 33.427362    },    " +
+                        "\"accuracy\":50,    " +
+                        "\"name\":\"Frontline house\",    " +
+                        "\"phone_number\":\"(+91) 983 893 3937\",    " +
+                        "\"address\" : \"29, side layout, cohen 09\",    " +
+                        "\"types\": [\"shoe park\",\"shop\"],    " +
+                        "\"website\" : \"http://google.com\",    " +
+                        "\"language\" : \"French-IN\"}").
 
                 when().post("/maps/api/place/add/json").//resourse is passed here
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().

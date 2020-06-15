@@ -26,7 +26,7 @@ public class basics9_twitter {
 
         RestAssured.baseURI = "https://api.twitter.com/1.1/statuses";
         Response res = given().auth().oauth(ConsumerKey, ConsumerSecret, Token, TokenSecret)
-                .queryParam("count", "1")
+                .param("count", "1")
                 .when().get("/home_timeline.json")
                 .then().extract().response();
 
@@ -45,7 +45,7 @@ public class basics9_twitter {
 
         RestAssured.baseURI = "https://api.twitter.com/1.1/statuses";
         Response res = given().auth().oauth(ConsumerKey, ConsumerSecret, Token, TokenSecret)
-                .queryParam("status", "New tweet created 4")
+                .param("status", "New tweet created 8")
                 .when().post("/update.json")
                 .then().extract().response();
 
@@ -60,7 +60,6 @@ public class basics9_twitter {
     @Test
 
     public void deleteTweet() {
-        createTweet();
         RestAssured.baseURI = "https://api.twitter.com/1.1/statuses";
         Response res = given().auth().oauth(ConsumerKey, ConsumerSecret, Token, TokenSecret)
                 .when().post("/destroy/" + id + ".json")

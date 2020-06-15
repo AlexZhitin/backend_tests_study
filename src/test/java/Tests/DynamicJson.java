@@ -41,7 +41,7 @@ public class DynamicJson {
 
     @DataProvider(name="BooksData")
     public Object[][] getdata(){
-        return new Object[][] {{"isbn758", "aisle947"},{"isbn567g", "aisle743nf"}, {"isbn54ff", "aislefcne"} };
+        return new Object[][] {{"isbn758 ", "aisle947"},{"isbn567g ", "aisle743nf"}, {"isbn54ff ", "aislefcne"} };
     }
 
 }
