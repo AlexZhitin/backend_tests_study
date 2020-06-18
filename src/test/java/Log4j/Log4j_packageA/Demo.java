@@ -6,9 +6,8 @@ import org.testng.annotations.Test;
 
 public class Demo {
 
+
     private static Logger log = LogManager.getLogger(Demo.class.getName());
-
-
     /*
     Had to add resourcesLog4j2 to build path (add a new content root). Steps are the following:
 

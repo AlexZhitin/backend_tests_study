@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
 <Configuration status="WARN">
 
-    <!--Log4j2 configuration file-->
+    &lt;!&ndash;Log4j2 configuration file&ndash;&gt;
 
     <Properties>
         <Property
@@ -35,6 +36,38 @@
         </Logger>
 
         <Root level="trace">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>-->
+
+<Configuration status="WARN">
+
+    <Properties>
+        <Property
+                name = "basePath">.logs
+        </Property>
+    </Properties>
+    <Appenders>
+
+        <RollingFile
+                name="File"
+                fileName="${basePath}/prints.log"
+                filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log"
+                ignoreExceptions="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="500"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
