@@ -6,9 +6,6 @@ import org.testng.annotations.Test;
 
 public class Demo {
 
-    private static Logger log = LogManager.getLogger(Demo.class.getName());
-
-
     /*
     Had to add resourcesLog4j2 to build path (add a new content root). Steps are the following:
 
@@ -23,7 +20,8 @@ public class Demo {
     @Test
 
     public void Test() {
-
+        System.setProperty("log4j.configurationFile","D:\\QA\\Selenium_projects\\backend_tests_study\\src\\main\\resources\\log4j2.xml");
+        Logger log = LogManager.getLogger(Log4j.Log4j_packageB.Demo.class.getName());
         if (2 > 0) {
             log.debug("I am debugging");
             log.info("I am info");

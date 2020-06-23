@@ -30,7 +30,7 @@
     </Appenders>
     <Loggers>
 
-        <Logger name="Log4j.Log4j_packageA.Demo" level="error" additivity="false">
+        <Logger name="Log4j.Log4j_packageB.Demo" level="error" additivity="false">
             <AppenderRef ref="File"/>
         </Logger>
 

@@ -1,9 +1,7 @@
 package Tests;
 
-import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.internal.path.json.mapping.JsonObjectDeserializer;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
@@ -14,16 +12,14 @@ import files.resources;
 import files.payload;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class basicsPostDelete {
-    private static Logger log = LogManager.getLogger(basicsPostDelete.class.getName());
+public class basicsPostDeleteTest {
+    private static Logger log = LogManager.getLogger(basicsPostDeleteTest.class.getName());
     Properties prop = new Properties();
     private static String propertiesPath = System.getProperty("user.dir") + "/src/test/java/files/env.properties";
 
