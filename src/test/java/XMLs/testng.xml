@@ -6,7 +6,7 @@
     <test verbose="2" preserve-order="true" name="Chrome test cases">
         <classes>
 
-            <class name="Log4j.Log4j_packageA.Demo">
+            <class name="Log4j.Log4j_packageB.Demo">
                 <!--<methods>
                     <include name="UsersSectionIsAvailableForAdmin"/>
                 </methods>-->
