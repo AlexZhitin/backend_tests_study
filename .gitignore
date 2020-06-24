@@ -38,4 +38,6 @@ hs_err_pid*
 .idea
 *.iml
 .idea/modules.xml
+allure-results
+allure-report
 

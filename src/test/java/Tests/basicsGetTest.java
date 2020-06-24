@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import static io.restassured.RestAssured.given;
 
-public class basicsGet {
+public class basicsGetTest {
 
     @Test
 
