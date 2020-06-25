@@ -20,7 +20,8 @@ public class Demo {
     @Test
 
     public void Test() {
-        System.setProperty("log4j.configurationFile","D:\\QA\\Selenium_projects\\backend_tests_study\\src\\main\\resources\\log4j2.xml");
+        /*System.setProperty line is needed to point Maven to log4j2.xml configuration file. Alternative is resources tag in pom.xml (build block)*/
+        /* System.setProperty("log4j.configurationFile","D:\\QA\\Selenium_projects\\backend_tests_study\\src\\main\\resources\\log4j2.xml");*/
         Logger log = LogManager.getLogger(Log4j.Log4j_packageB.Demo.class.getName());
         if (2 > 0) {
             log.debug("I am debugging");

@@ -6,7 +6,7 @@
     <test verbose="2" preserve-order="true" name="Chrome test cases">
         <classes>
 
-            <class name="Tests.basicsPostDeleteTest">
+            <class name="Log4j.Log4j_packageA.Demo">
                 <!--<methods>
                     <include name="UsersSectionIsAvailableForAdmin"/>
                 </methods>-->

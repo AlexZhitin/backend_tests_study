@@ -17,6 +17,16 @@
 
 
     <build>
+
+
+      <resources> <!--resources tag points to Maven where to look into before running tests. e.g. log4j2.xml to apply logger configurations-->
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+            </resource>
+      </resources>
+
+
         <plugins>
 
             <plugin>
@@ -116,11 +126,6 @@
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
             <version>4.0.0</version>
         </dependency>
@@ -146,12 +151,13 @@
             <artifactId>scala-support</artifactId>
             <version>4.0.0</version>
         </dependency>
-        <dependency>
+
+        <!--<dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.0.0</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
