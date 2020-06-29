@@ -6,6 +6,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import files.resources;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 
 public class basicsPostDeleteTest {
     private static Logger log = LogManager.getLogger(basicsPostDeleteTest.class.getName());
@@ -42,7 +44,6 @@ public class basicsPostDeleteTest {
         Response res = given().
                 queryParam("key", prop.getProperty("KEY")).
                 body(payload.getPostData()).
-
                 when().post(resources.placePostData()).
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
                 body("status", equalTo("OK")).extract().response();
