@@ -43,7 +43,7 @@ public class basics8_jira_Test {
                         "\"value\": \"Administrators\"  }}").
                 when().
                 post("/rest/api/2/issue/" + issue_id + "/comment").
-                then().statusCode(201).extract().response();
+                then().assertThat().statusCode(201).extract().response();
 
         JsonPath js = ReusableMethods.rawToJson(res);
         String comment_id = js.get("id");
@@ -61,7 +61,7 @@ public class basics8_jira_Test {
                         "\"value\": \"Administrators\"  }}").
                 when().
                 put("/rest/api/2/issue/" + issue_id + "/comment/{comment_id}"). //{comment_id} is a path parameter specified above
-                then().statusCode(200).extract().response();
+                then().assertThat().statusCode(200).extract().response();
 
     }
 }

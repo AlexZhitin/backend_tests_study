@@ -6,10 +6,10 @@
     <test verbose="2" preserve-order="true" name="Chrome test cases">
         <classes>
 
-            <class name="Log4j.Log4j_packageA.Demo">
-                <!--<methods>
-                    <include name="UsersSectionIsAvailableForAdmin"/>
-                </methods>-->
+            <class name="Tests.POJO.createJiraTicket">
+                <methods>
+                    <include name="createJiraIssue"/>
+                </methods>
             </class>
         </classes>
     </test>

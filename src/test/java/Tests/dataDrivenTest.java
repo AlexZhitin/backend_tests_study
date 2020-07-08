@@ -9,7 +9,7 @@ public class dataDrivenTest {
     @Test
 
     public void Test1() throws IOException {
-        ArrayList data = dataDriven.getData("Purchase");
+        ArrayList data = dataDriven.getData("Purchase","testdata");
         System.out.println(data.get(1));
     }
 }

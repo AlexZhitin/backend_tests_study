@@ -4,6 +4,9 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
@@ -25,17 +28,27 @@ public class ReusableMethods {
 
     public static String getSessionKey(){
 
-        RestAssured.baseURI = "http://localhost:8080";
-        Response res = given().header("content-type", "application/json").
-                body("{ \"username\": \"aszhitin\", \"password\": \"lenovos820\" }").
-                when().
-                post("/rest/auth/1/session").
-                then().statusCode(200).
-                extract().response();
+        HashMap<String, Object> creds = new HashMap<>(); //dependency json needs to be added
+        creds.put("username", "aszhitin");
+        creds.put("password", "lenovos820");
 
-        JsonPath js = ReusableMethods.rawToJson(res);
-        String session_id = js.get("session.value");
-        /*System.out.println(session_id);*/
+
+        RestAssured.baseURI = "http://localhost:8080";
+        Response res = given()
+                .header("content-type", "application/json")
+                .body(creds)
+                .when().post("/rest/auth/1/session")
+                .then().log().body().statusCode(200)
+                .extract().response();
+
+        /*res.getBody().jsonPath()*/
+
+
+        /*JsonPath js = ReusableMethods.rawToJson(res);*/
+        String session_id = res.getCookies().get("JSESSIONID"); // or String session_id = res.jsonPath().get("session.value");
+        /*System.out.println(res.getCookies());
+        System.out.println(session_id);*/
+
         return session_id;
     }
 
@@ -53,6 +66,7 @@ public class ReusableMethods {
                 when().
                 post("/rest/api/2/issue").
                 then().statusCode(201).extract().response();
+
 
         JsonPath js = ReusableMethods.rawToJson(res);
         String issue_id = js.get("id");
